@@ -1,6 +1,16 @@
+module.exports = function towelSort(matrix) {
 
-// You should implement your task here.
+  if (!matrix || matrix.length <= 0) {
+    return []
+  }
 
-module.exports = function towelSort (matrix) {
-  return [];
+  const newArr = matrix.map((element, index) => {
+    if (index % 2) {
+      return element.sort((a, b) => b - a)
+    } else {
+      return element.sort((a, b) => a - b)
+    }
+  });
+  return newArr.join(',').split(',')
+
 }
